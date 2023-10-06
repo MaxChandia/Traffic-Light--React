@@ -3,22 +3,22 @@ import { useState } from "react";
 
 
 function LightTraffic () {
-    const [color1, setColor1] = useState("red");
+    const [color1, setColor1] = useState("#A42509");
 
   const toggleColor = () => {
-    setColor1(prevColor => prevColor === "red" ? 'selected' : 'red');
+    setColor1(prevColor => prevColor === "#A42509" ? 'red' : '#A42509');
   };
 
-  const [color2, setColor2] = useState("orange");
+  const [color2, setColor2] = useState("#CBD11C");
 
   const toggleColor2 = () => {
-    setColor2(prevColor => prevColor === "orange" ? 'glow' : 'orange');
+    setColor2(prevColor => prevColor === "#CBD11C " ? '#F3FA23' : '#CBD11C ');
   };
 
   const [color3, setColor3] = useState("green");
 
   const toggleColor3 = () => {
-    setColor3(prevColor => prevColor === "green" ? 'yellow' : 'green');
+    setColor3(prevColor => prevColor === "green" ? 'green' : 'green');
   };
 
     return (
@@ -40,7 +40,7 @@ function LightTraffic () {
                 width: "50px",
                 height: "50px",
                 borderRadius: "50%",
-                background: "orange",
+                background: color2,
                 margin: "5px 15px"
             }}></div>
             <div onClick= {toggleColor3} className="red" style={{
@@ -48,7 +48,7 @@ function LightTraffic () {
                 height: "50px",
                 borderRadius: "50%",
                 background: color3,
-                margin: "5px 15px"
+                margin: "5px 15px",
             }}></div>
             
 
