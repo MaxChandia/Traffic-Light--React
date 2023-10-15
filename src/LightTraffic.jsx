@@ -3,24 +3,8 @@ import { useState } from "react";
 
 
 function LightTraffic () {
-    const [colorRed, setColorRed] = useState("#A42509");
-
-  const toggleColorRed = () => {
-    setColorRed(prevColor => prevColor === "#A42509" ? 'red' : '#A42509');
-  };
-
-  const [colorYellow, setColorYellow] = useState("#CBD11C");
-
-  const toggleColorYellow = () => {
-    setColorYellow(prevColor => prevColor === "#CBD11C " ? '#F3FA23' : '#CBD11C ');
-  };
-
-  const [colorGreen, setColorGreen] = useState("#1B6921");
-
-  const toggleColorGreen = () => {
-    setColorGreen(prevColor => prevColor === "#1B6921" ? '#30D53D' : '#1B6921');
-  };
-
+    const [color, setColor] = useState();
+  
     return (
     <div className="container">
             <div className="topSemaforo" style={{width: "15px",
@@ -40,25 +24,25 @@ function LightTraffic () {
             marginTop: "0px"
             
         }}>
-            <div onClick= {toggleColorRed} className="redLight" style={{
+            <div onClick= {() => setColor("#A42509")} className="redLight" style={{
                 width: "50px",
                 height: "50px",
                 borderRadius: "50%",
-                background: colorRed,
+                background: color === "#A42509" ? 'red' : '#A42509',
                 margin: "0px 15px",
             }}></div>
-            <div onClick= {toggleColorYellow} className="yellowLight" style={{
+            <div onClick= {() => setColor("#CBD11C")} className="yellowLight" style={{
                 width: "50px",
                 height: "50px",
                 borderRadius: "50%",
-                background: colorYellow,
+                background: color === "#CBD11C" ? '#F3FA23' : "#CBD11C",
                 margin: "5px 15px"
             }}></div>
-            <div onClick= {toggleColorGreen} className="greenLight" style={{
+            <div onClick= {() => setColor("#1B6921")} className="greenLight" style={{
                 width: "50px",
                 height: "50px",
                 borderRadius: "50%",
-                background: colorGreen,
+                background: color === "#1B6921" ? '#30D53D' : '#1B6921',
                 margin: "5px 15px",
             }}></div>
             
